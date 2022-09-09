@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/IsaacCalligeros95/githubpackagefeedtest/issues"
   },
-  "homepage": "https://github.com/IsaacCalligeros95/githubpackagefeedtest#readme"
+  "homepage": "https://github.com/IsaacCalligeros95/githubpackagefeedtest#readme",
+  "publishConfig": {
+    "@YOUR-USERNAME:registry": "https://npm.pkg.github.com"
+  }
 }
