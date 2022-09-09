@@ -1,0 +1,19 @@
+{
+  "name": "githubpackagefeedtest",
+  "version": "1.0.0",
+  "description": "testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsaacCalligeros95/githubpackagefeedtest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsaacCalligeros95/githubpackagefeedtest/issues"
+  },
+  "homepage": "https://github.com/IsaacCalligeros95/githubpackagefeedtest#readme"
+}
