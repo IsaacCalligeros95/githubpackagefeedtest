@@ -1,5 +1,5 @@
  - name: Deploy a release in Octopus Deploy 🐙
-      uses: OctopusDeploy/deploy-release-action@f738e6032178fb02033230cac2e31599d2c0cb33 # v 3.0.3
+      uses: OctopusDeploy/create-release-action@v3.0.4
       id: deploy
       with:
         project: 'Opserver'
