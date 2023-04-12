@@ -5,9 +5,9 @@ on:
       - main
 
 env:
-    OCTOPUS_API_KEY: ${{ secrets.OCTOPUSSERVERAPIKEY  }}
-    OCTOPUS_URL: ${{ secrets.OCTOPUSSERVERURL }}
-    OCTOPUS_SPACE:  ${{ secrets.OCTOPUSSERVER_SPACE }}
+    OCTOPUS_API_KEY: ${{ OCTOPUSSERVERAPIKEY  }}
+    OCTOPUS_URL: ${{ OCTOPUSSERVERURL }}
+    OCTOPUS_SPACE:  ${{ OCTOPUSSERVER_SPACE }}
 
 jobs:
   build:
