@@ -7,7 +7,7 @@ on:
 env:
     OCTOPUS_API_KEY: ${{ secrets.OCTOPUSSERVERAPIKEY  }}
     OCTOPUS_URL: ${{ secrets.OCTOPUSSERVERURL }}
-    OCTOPUS_SPACE: ${{ secrets.OCTOPUSSERVERSPACE }}
+    OCTOPUS_SPACE: Spaces-1
 
 jobs:
   build:
@@ -35,6 +35,6 @@ jobs:
       env:
           OCTOPUS_API_KEY: ${{ secrets.OCTOPUSSERVERAPIKEY  }}
           OCTOPUS_URL: ${{ secrets.OCTOPUSSERVERURL }}
-          OCTOPUS_SPACE: ${{ secrets.OCTOPUSSERVERSPACE }}
+          OCTOPUS_SPACE: Spaces-1
       with:
         server_task_id: ${{ fromJson(steps.queue_deployments.outputs.server_tasks)[0].serverTaskId }}
