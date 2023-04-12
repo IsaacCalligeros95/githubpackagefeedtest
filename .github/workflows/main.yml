@@ -19,6 +19,7 @@ jobs:
 
     - name: create_release_octo_deploy
       uses: OctopusDeploy/create-release-action@v3.0.4
+      id: "create_release"
       with:
         # The name of the project associated with this release.
         project: "Run a script"
