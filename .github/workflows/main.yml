@@ -1,15 +1,24 @@
- - name: Deploy a release in Octopus Deploy 🐙
-      uses: OctopusDeploy/create-release-action@v3.0.4
-      id: deploy
-      with:
-        project: 'Opserver'
-        release_number: '${{ needs.build.outputs.version }}'
-        environments: |
-          Dev
-        variables: |
-          tf_module_version: ${{ needs.build.outputs.version }}
+name: Test Octo Actions
+on:
+  push:
+    branches:
+      - main
+		
+env:
+    OCTOPUS_API_KEY: ${{ secrets.OCTOPUSSERVERAPIKEY  }}
+    OCTOPUS_URL: ${{ secrets.OCTOPUSSERVERURL }}
+    OCTOPUS_SPACE:  ${{ secrets.OCTOPUSSERVER_SPACE }}
+		
+jobs:
+  build:
 
-    - name: Await task in Octopus Deploy 🐙
-      uses: OctopusDeploy/await-task-action@df7319c026caef02341eb8b702771276b3c445f3 # v3.0.2
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Install Octopus CLI
+      uses: OctopusDeploy/install-octopus-cli-action@v3.0.0
+    
+    - name: Create Release in Octopus Deploy
+      uses: OctopusDeploy/create-release-action@v3.0.4
       with:
-        server_task_id: ${{ steps.deploy.outputs.server_tasks[0].serverTaskId }}
+        # The name of the project associated with this release.
+        project: "Run a script"
