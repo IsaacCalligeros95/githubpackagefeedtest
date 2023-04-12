@@ -38,6 +38,7 @@ jobs:
       with:
         project: "Run a script"
         release_number: ${{ steps.create_release.outputs.release_number }}
+        environments: Dev
 
     - name: Await task in Octopus Deploy 🐙
       uses: OctopusDeploy/await-task-action@v3
