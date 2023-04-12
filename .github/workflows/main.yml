@@ -19,6 +19,10 @@ jobs:
 
     - name: create_release_octo_deploy
       uses: OctopusDeploy/create-release-action@v3.0.4
+      env:
+           OCTOPUS_API_KEY: ${{ secrets.OCTOPUSSERVERAPIKEY  }}
+           OCTOPUS_URL: ${{ secrets.OCTOPUSSERVERURL }}
+           OCTOPUS_SPACE: Default
       id: "create_release"
       with:
         # The name of the project associated with this release.
@@ -26,6 +30,10 @@ jobs:
 
     - name: Deploy the release in Octopus Deploy 🐙
       uses: OctopusDeploy/deploy-release-action@v3
+      env:
+           OCTOPUS_API_KEY: ${{ secrets.OCTOPUSSERVERAPIKEY  }}
+           OCTOPUS_URL: ${{ secrets.OCTOPUSSERVERURL }}
+           OCTOPUS_SPACE: Default
       id: "queue_deployments"
       with:
         project: "Run a script"
