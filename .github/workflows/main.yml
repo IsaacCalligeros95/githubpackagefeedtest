@@ -42,7 +42,7 @@ jobs:
         
     - name: echoing
       run: | 
-            echo 'HI ${{ steps.queue_deployments.outputs.server_tasks[0] }}'
+            echo ${{ fromJson(steps.queue_deployments.outputs.server_tasks) }}
 
     - name: Await task in Octopus Deploy 🐙
       uses: OctopusDeploy/await-task-action@v3
@@ -51,4 +51,4 @@ jobs:
           OCTOPUS_URL: ${{ secrets.OCTOPUSSERVERURL }}
           OCTOPUS_SPACE: Default
       with:
-        server_task_id: ${{ steps.queue_deployments.outputs.server_tasks[0].serverTaskId }}
+        server_task_id: ${{ (steps.queue_deployments.outputs.server_tasks[0]).serverTaskId }}
